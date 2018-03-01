@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Exit immediately on errors, and echo commands as they are executed.
+set -ex
+
+wp option update home 'https://onwardstate.lndo.site' --url=onwardstate.com
+wp option update siteurl 'https://onwardstate.lndo.site/wp/' --url=onwardstate.com
+wp transient delete --all --url=onwardstate.lndo.site
+wp revisions clean --hard --url=onwardstate.lndo.site
+wp db optimize --url=onwardstate.lndo.site
